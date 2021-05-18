@@ -4,14 +4,20 @@ Learning about CMake tool. The next Classes will be available inside this reposi
 <br>
 <br>
 
-## Our Gols in Class 02
+## Our Gols in Class 02 - Continuos
 adder an own library to our program
 
-    - [ ] Create a subdirectory that you could name such as Classes
-    - [ ] Create the 2 files, MathFunction.h and MathFunction.cpp
-    - [ ] Declare and implement the code square root to function squareRoot()
-    - [ ] Add a CMakeLists.txt file to folder Classes and include the line add library 
-    - [ ] Add on top-level CMakeLists.txt the subdirectory, target link, and target include to directory Classes.
+    - [ ] Make a library optional, add a top-level
+    option in CMakelists.txt
+
+    - [ ] make building and linking the MathFunctions library Conditional. to do this in end top-level file, before add_executable
+
+    - [ ] inside TutorialConfig.h.in add the definition #CMAKEDEFINE USE_MYMATH
+
+    - [ ] inside the target link replace for extra_libs
+
+    - [ ] inside the target include directories 
+    replace extra includes libraries
 
 <br>
 <br>

@@ -1,13 +1,16 @@
 #include <iostream>
 #include <string>
+#include <cmath>
 
 #include "Config/TutorialConfig.h"
+
+// check if option is ON
+#ifdef USE_MYMATH
 #include "Classes/MathFunctions.h"
+#endif
 
 int main(int argc, char *argv[])
 {
-
-    MathFunctions math;
 
     // report version
     if (argc < 2)
@@ -21,12 +24,14 @@ int main(int argc, char *argv[])
     // Convert string to double
     const double inputValue = std::stod(argv[1]);
 
-    std::cout << "Hello World!" << std::endl;
+#ifdef USE_MYMATH
+    MathFunctions math;
+    const double outputValue = math.squareRoot(inputValue);
+#else
+    const double outputValue = sqrt(inputValue);
+#endif
 
-    // Evaluate square root
-    std::cout << "Square Root: " << math.squareRoot(9.0) << std::endl;
+    std::cout << "The square root of " << inputValue << " is " << outputValue << std::endl;
 
     return 0;
-
-
 }
